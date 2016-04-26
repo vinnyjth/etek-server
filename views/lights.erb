@@ -1,0 +1,22 @@
+<% lights_with_codes = [{ on: 5264691 , off: 5264700, label: "All" }, { on: 5264835, off: 5264844, label: "Reading" }, { on: 5265155, off: 5265164, label: "Window" }, { on: 5266691, off: 5266700, label: "Unused" }, { on: 5272835, off: 5272844, label: "Unused" }] %>
+
+<% lights_with_codes.each do |light| %>
+<div class="light-container">
+  <div class="light-row">
+    <h1><%= light[:label] %></h1>
+    <button class="light-on" data-light-code="<%= light[:on] %>">
+      On
+    </button>
+    <button class="light-off" data-light-code="<%= light[:on] %>">
+      Off
+    </button>
+  </div>
+</div>
+<% end %>
+
+<script>
+  $("[data-light-code]").on("click", function(e){
+    var lightCode = $(e.target).attr("data-light-code");
+    $.post("/lights", { light_code: lightCode });
+  });
+</script>

@@ -1,0 +1,52 @@
+<!doctype HTML>
+<html>
+  <head>
+    <title>Vinny IOT</title>
+    <style>
+      .light-row {
+        display: block;
+      }
+      .light-row > button {
+        display: inline-block;
+        padding: 20px;
+        margin: 3px;
+        border-radius: 3px;
+        border: none;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        font-size: 30px;
+        cursor: pointer;
+        width: 45%;
+      }
+      .light-on {
+        background-color: rgb(0,160,176);
+      }
+      .light-off {
+        background-color: rgb(235,104,65);;
+      }
+      .light-on:hover {
+        background-color: rgba(0,160,176,0.7);
+      }
+      .light-off:hover {
+        background-color: rgba(235,104,65,0.7);
+      }
+      .light-on:active {
+        background-color: rgba(0,160,176,0.5);
+      }
+      .light-off:active {
+        background-color: rgba(235,104,65,0.5);
+      }
+      .light-container {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+      }
+    </style>
+      <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+  </head>
+  <body>
+    <%= yield %>
+  </body>
+</html>
