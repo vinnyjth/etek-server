@@ -1,7 +1,7 @@
 require "sinatra"
 
 configure do
-  set :rfpath, "~/rfoutlet/codesend"
+  set :rfpath, "sudo ~/rfoutlet/codesend"
 end
 
 get "/lights" do
@@ -9,5 +9,6 @@ get "/lights" do
 end
 
 post "/lights" do
-  `#{settings.rfpath} #{params[:light_code]}`
+  code = params[:light_code].to_i
+  `#{settings.rfpath} #{code}`
 end
